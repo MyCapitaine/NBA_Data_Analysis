@@ -75,7 +75,8 @@ public class MatchSelectionPanel extends JPanel {
 				changeSeason(Season.season14_15);
 			}
 		});
-		current_season = Season.season12_13;
+		foreground.setBounds(lb_thirdSeason.getX(), LABEL_Y, Config.UI_WIDTH/3, 134/3+10);
+		current_season = Season.season14_15;
 		
 		new refThread().start();
 	}
@@ -119,7 +120,7 @@ public class MatchSelectionPanel extends JPanel {
 							MainFrame.mainFrame.topTabPanel.tg.jsp.getVerticalScrollBar().setValue(v);
 						} catch(Exception e) {}
 					}
-					Thread.sleep(10*1000);
+					Thread.sleep(30*1000);
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();

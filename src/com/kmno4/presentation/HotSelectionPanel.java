@@ -175,7 +175,7 @@ public class HotSelectionPanel extends JPanel implements ActionListener,MouseMot
 				lb_date = new JLabel(Config.LASTEST_DATE);
 				lb_date.setForeground(Color.white);
 				lb_date.setFont(new Font("default", Font.PLAIN, 20));
-				lb_date.setBounds(500, 73, 168, 27);
+				lb_date.setBounds(250, 73, 168, 27);
 				add(lb_date);
 				
 				
@@ -424,7 +424,7 @@ public class HotSelectionPanel extends JPanel implements ActionListener,MouseMot
 						}			
 						lb_date.setText(Config.LASTEST_DATE);
 					}
-					Thread.sleep(10 * 1000);
+					Thread.sleep(30 * 1000);
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();

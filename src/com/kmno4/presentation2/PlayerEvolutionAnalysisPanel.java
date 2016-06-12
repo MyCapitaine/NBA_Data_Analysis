@@ -47,7 +47,7 @@ public class PlayerEvolutionAnalysisPanel extends JPanel {
 				PADDING * 2 + PlayerDataAnalysisPanel.SELECT_PANEL_HEIGHT + PlayerDataAnalysisPanel.LABEL_HEIGHT,
 				Config.UI_WIDTH - 2 * PADDING,
 				PlayerDataAnalysisPanel.PANEL_HEIGHT);
-		setBackground(Color.white);
+//		setBackground(new Color(128,255,255,255));
 		setLayout(null);
 		
 		conditions = new JComboBox<String>(new String[]{"命中率", "效率", "使用率", "失误率", "助攻率", "抢断率"});
@@ -87,9 +87,10 @@ public class PlayerEvolutionAnalysisPanel extends JPanel {
 		CategoryDataset dataset = DatasetUtilities.createCategoryDataset(
 				new String[]{""},
 				s, d);
-		chart = ChartFactory.createLineChart("data evolution of latest season", "", "", dataset);
+		chart = ChartFactory.createLineChart("", "", "", dataset);
 		chart.getCategoryPlot().getDomainAxis().setVisible(false);
 		chartPanel = new ChartPanel(chart, true);
+		chartPanel.setBackground(new Color(100,255,255,255));
 		chartPanel.setBounds(0, COMBOBOX_HEIGHT, Config.UI_WIDTH - 2 * PADDING, CHART_HEIGHT);
 		add(chartPanel);
 	}

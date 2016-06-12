@@ -58,7 +58,8 @@ public class TeamEvolutionAnalysisPanel extends JPanel {
 		ValueAxis v = p.getRangeAxis();
 		v.setUpperMargin(1);
 		v.setLowerMargin(1);
-		v.setRange(0, 15);
+		v.setRange(1, 15);
+		v.setInverted(true);
 		chartPanel = new ChartPanel(lineChart, true);
 		chartPanel.setBounds(0, 0, getWidth(), getHeight());
 		add(chartPanel);

@@ -164,9 +164,9 @@ public class TeamPlayerAnalysisPanel extends JPanel {
 			info2.setBounds(240, 100, 60, 60);
 			PUtil.setFontandColor(info2, 50, Color.red);
 			
-			info3 = new JLabel("Team Leader");
+			info3 = new JLabel("No.1 Team Leader");
 			info3.setBounds(240, 20, 400, 60);
-			PUtil.setFontandColor(info3, new Font("default", 2, 35), Color.black);
+			PUtil.setFontandColor(info3, new Font("default", 0, 35), Color.black);
 			
 			info4 = new JLabel(conditions.getSelectedItem().toString() + " : " + String.format("%.2f", data[1][0]));
 			info4.setBounds(240, 250, 300, 40);

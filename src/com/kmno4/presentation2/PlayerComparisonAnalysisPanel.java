@@ -43,7 +43,7 @@ public class PlayerComparisonAnalysisPanel extends JPanel {
         OTHER_PANEL_WIDHT = PLAYER_PANEL_WIDTH,
         OTHER_PANEL_HEIGHT = PlayerDataAnalysisPanel.PANEL_HEIGHT - PADDING - PLAYER_PANEL_HEIGHT;
 	private PlayerPanel player1, player2;
-	private InfoPanel info;
+//	private InfoPanel info;
 	private InputPanel input;
 	private JLabel v, s;
 	
@@ -90,10 +90,10 @@ public class PlayerComparisonAnalysisPanel extends JPanel {
 		
 		public PlayerPanel(PlayerPO p) {
 			ini(false, p);
-			if(info != null) {
-				info.setVisible(false);
-				playerComparisonAnalysisPanel.remove(info);
-			}
+//			if(info != null) {
+//				info.setVisible(false);
+//				playerComparisonAnalysisPanel.remove(info);
+//			}
 			if(anotherPlayerPO != null) {
 				PlayerData pd;
 				switch(input.conditions.getSelectedIndex()) {
@@ -104,24 +104,24 @@ public class PlayerComparisonAnalysisPanel extends JPanel {
 				default : pd = PlayerData.score; 
 				}
 				String s = (String)input.conditions.getSelectedItem();
-				if(playerPO.getName().equals(anotherPlayerPO.getName())) {
-					boolean b1 = MainFrame.mainFrame.bl.ifBetterThanSelf(playerPO, pd, Config.LASTEST_SEASON);
-					boolean b2 = MainFrame.mainFrame.bl.ifStableThanSelf(playerPO, pd, Config.LASTEST_SEASON);
-					info = new InfoPanel(
-						b1 ? "推测该球员本赛季" + s + "成绩较上赛季进步" : "推测该球员本赛季" + s + "成绩较上赛季退步",
-						b2 ? "推测该球员本赛季" + s + "成绩比上赛季稳定" : "推测该球员本赛季" + s + "成绩没上赛季稳定");
-				    info.setFontSize(18);
-				}
-				else {
-					boolean b1 = MainFrame.mainFrame.bl.ifBetterThanAnother(playerPO, anotherPlayerPO, pd, Config.LASTEST_SEASON);
-					boolean b2 = MainFrame.mainFrame.bl.ifStableThanAnother(playerPO, anotherPlayerPO, pd, Config.LASTEST_SEASON);
-					info = new InfoPanel(
-						"推测" + playerPO.getName() + "本赛季" + s + "发挥" + (b1 ? "比" : "不如") + anotherPlayerPO.getName() + "优秀",
-						"推测" + playerPO.getName() + "本赛季" + s + "发挥" + (b2 ? "比" : "不如") + anotherPlayerPO.getName() + "稳定");
-					info.setFontSize(14);
-				}
+//				if(playerPO.getName().equals(anotherPlayerPO.getName())) {
+//					boolean b1 = MainFrame.mainFrame.bl.ifBetterThanSelf(playerPO, pd, Config.LASTEST_SEASON);
+//					boolean b2 = MainFrame.mainFrame.bl.ifStableThanSelf(playerPO, pd, Config.LASTEST_SEASON);
+//					info = new InfoPanel(
+//						b1 ? "推测该球员本赛季" + s + "成绩较上赛季进步" : "推测该球员本赛季" + s + "成绩较上赛季退步",
+//						b2 ? "推测该球员本赛季" + s + "成绩比上赛季稳定" : "推测该球员本赛季" + s + "成绩没上赛季稳定");
+//				    info.setFontSize(18);
+//				}
+//				else {
+//					boolean b1 = MainFrame.mainFrame.bl.ifBetterThanAnother(playerPO, anotherPlayerPO, pd, Config.LASTEST_SEASON);
+//					boolean b2 = MainFrame.mainFrame.bl.ifStableThanAnother(playerPO, anotherPlayerPO, pd, Config.LASTEST_SEASON);
+//					info = new InfoPanel(
+//						"推测" + playerPO.getName() + "本赛季" + s + "发挥" + (b1 ? "比" : "不如") + anotherPlayerPO.getName() + "优秀",
+//						"推测" + playerPO.getName() + "本赛季" + s + "发挥" + (b2 ? "比" : "不如") + anotherPlayerPO.getName() + "稳定");
+//					info.setFontSize(14);
+//				}
 			}
-			else info = new InfoPanel(null, null);
+//			else info = new InfoPanel(null, null);
 		}
 		private void ini(boolean isLeft, PlayerPO p) {
 			if(isLeft) setBounds(0, 0, PLAYER_PANEL_WIDTH, PLAYER_PANEL_HEIGHT);

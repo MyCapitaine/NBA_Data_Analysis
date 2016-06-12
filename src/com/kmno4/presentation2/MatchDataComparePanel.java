@@ -7,6 +7,8 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
@@ -22,6 +24,7 @@ import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
 
 import com.kmno4.common.Config;
+import com.kmno4.presentation.MainFrame;
 import com.kmno4.presentation.PlayerDetailPanel;
 
 import PO.MatchPO;
@@ -35,7 +38,7 @@ import PO.TeamPO;
  */
 @SuppressWarnings("serial")
 public class MatchDataComparePanel extends JPanel {
-//	private MatchDataAnalysisFrame matchDataAnalysisFrame;
+	private MatchDataAnalysisFrame matchDataAnalysisFrame;
 //	private MatchDataComparePanel matchDataComparePanel;
 	private MatchPO matchPO;
 	public static final int
@@ -54,7 +57,7 @@ public class MatchDataComparePanel extends JPanel {
 	private TeamPO t1, t2;
 	public MatchDataComparePanel(MatchPO m, MatchDataAnalysisFrame f) {
 		matchPO = m;
-//		matchDataAnalysisFrame = f;
+		matchDataAnalysisFrame = f;
 //		matchDataComparePanel = this;
 		t1 = TeamListPO.findTeamByShortName(matchPO.getFirstTeam());
 		t2 = TeamListPO.findTeamByShortName(matchPO.getSecondTeam());
@@ -183,6 +186,12 @@ public class MatchDataComparePanel extends JPanel {
 		cp.setBounds(conditions.getX() + conditions.getWidth() + PADDING, 0, CHART_WIDTH, CHART_HEIGHT);
 //		cp.setBackground(new Color(0, 0, 0, 0));
 		cp.setVisible(true);
+		cp.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				matchDataAnalysisFrame.repaint();
+			}
+		});
 		add(cp);
 	}
 }

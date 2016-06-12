@@ -601,25 +601,31 @@ public class TableContentTransfer {
 		ArrayList<ScoreOfMatchPO> scores = match.getAllScore();
 		
 		
-		String[][] body = new String[3][scores.size() + 1] ;
+		String[][] body = new String[3][scores.size() + 2] ;
 		body[0][0] = "队伍";
 		body[0][1] = "第1节";
 		body[0][2] = "第2节";
 		body[0][3] = "第3节";
 		body[0][4] = "第4节";
 		int k = 5;
-		while(k < body[0].length) {
+		while(k < body[0].length - 1) {
 			body[0][k] = "加时" + (k - 4);
 			k ++;
 		}
+		int score1 = 0, score2 = 0;
+		body[0][k] = "总计";
+		
 		body[1][0] = match.getFirstTeam();
 		body[2][0] = match.getSecondTeam();
-		for(int i = 1; i < body[0].length; i ++) {
+		for(int i = 1; i < body[0].length - 1; i ++) {
 			ScoreOfMatchPO s = scores.get(i - 1);
 			body[1][i] = s.getFirstScore() + "";
+			score1 += s.getFirstScore();
 			body[2][i] = s.getSecondScore() + "";
+			score2 += s.getSecondScore();
 		}
-		
+		body[1][k] = score1 + "";
+		body[2][k] = score2 + "";
 		return body ;
 	}
 	

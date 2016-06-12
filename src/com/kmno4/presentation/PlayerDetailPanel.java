@@ -226,30 +226,30 @@ public class PlayerDetailPanel extends JPanel {
 
 			teamLabel = new JLabel();
 			TeamPO tp = TeamListPO.findTeamByShortName(playerPO.getTeam(Config.LASTEST_SEASON));
-			teamLabel.setBounds(450, 80, 80, 80);
+			teamLabel.setBounds(350, 80, 80, 80);
 			if(tp != null && tp.getTeamLogoURL() != null) fillLabel(tp.getTeamLogoURL(), teamLabel, teamLabel.getWidth(), teamLabel.getHeight());
 			add(teamLabel);
 			
 			ballNum = new JLabel(p.getNumber(), JLabel.RIGHT);
-			ballNum.setBounds(350, 15, 80, 80);
-			ballNum.setFont(new Font("default", 0, 50));
+			ballNum.setBounds(250, 15, 80, 80);
+			ballNum.setFont(new Font("default", 2, 50));
 			add(ballNum);
 			name = new JLabel(p.getName()); 
-			name.setFont(new Font("default", 0, 25));
-			name.setBounds(450, 40, 200, 50);
+			name.setFont(new Font("default", 2, 23));
+			name.setBounds(350, 40, 200, 50);
 			add(name);
 			
-			int delta = 30, width = 300, x = 650;
-			Font font = new Font("default", 2, 20);
+			int delta = 30, width = 300, x = 550;
+			Font font = new Font("default", 2, 18);
 			info1 = new JLabel("身高/体重 : " + p.getHeight() + "(英尺-英寸)/" + p.getWeight() + "(磅)");
 			info1.setFont(font);
-			info1.setBounds(x, 50, width, delta);
+			info1.setBounds(x, 50, 400, delta);
 			add(info1);
 			info2 = new JLabel("生日 : " + p.getBirth());
 			info2.setFont(font);
 			info2.setBounds(x, info1.getY() + delta, width, delta);
 			add(info2);
-			info3 = new JLabel("所在地 : " + p.getPosition());
+			info3 = new JLabel("球员位置 : " + p.getPosition());
 			info3.setFont(font);
 			info3.setBounds(x, info2.getY() + delta, width, delta);
 			add(info3);
@@ -264,8 +264,8 @@ public class PlayerDetailPanel extends JPanel {
 			info5.addMouseListener(new LMouseAdapter(playerDetailFrame) {
 				public void mouseClicked(MouseEvent e) {
 					new PlayerDataAnalysisFrame(playerPO, playerDetailFrame.getLocation());
-					playerDetailFrame.setVisible(false);
-					playerDetailFrame.dispose();
+//					playerDetailFrame.setVisible(false);
+//					playerDetailFrame.dispose();
 				}
 			});
 			add(info5);
