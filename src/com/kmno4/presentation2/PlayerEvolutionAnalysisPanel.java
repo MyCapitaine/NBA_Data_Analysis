@@ -50,7 +50,7 @@ public class PlayerEvolutionAnalysisPanel extends JPanel {
 //		setBackground(new Color(128,255,255,255));
 		setLayout(null);
 		
-		conditions = new JComboBox<String>(new String[]{"命中率", "效率", "使用率", "失误率", "助攻率", "抢断率"});
+		conditions = new JComboBox<String>(new String[]{"命中率 0.0~1.0", "效率 0.0~1.0", "使用率 0.0~1.0", "失误率 0.0~1.0", "助攻率 0.0~1.0", "抢断率 0.0~1.0"});
 		conditions.setFont(new Font("default", 0, 15));
 		conditions.setBounds(0, 0, COMBOBOX_WIDTH, COMBOBOX_HEIGHT);
 		conditions.addActionListener(new ActionListener() {
