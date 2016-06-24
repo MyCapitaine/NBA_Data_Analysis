@@ -78,7 +78,7 @@ public class MatchSelectionPanel extends JPanel {
 		foreground.setBounds(lb_thirdSeason.getX(), LABEL_Y, Config.UI_WIDTH/3, 134/3+10);
 		current_season = Season.season14_15;
 		
-		new refThread().start();
+//		new refThread().start();
 	}
 	
 	

@@ -153,7 +153,7 @@ public class HotSelectionPanel extends JPanel implements ActionListener,MouseMot
 	    most_improve_season.addActionListener(this);
 	    most_improve_datatype.addActionListener(this);
 	    
-		new refThread().start();
+//		new refThread().start();
 	}
 	
 	public void initDailyPlayer(){
